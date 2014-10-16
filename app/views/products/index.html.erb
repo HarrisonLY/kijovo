@@ -1,10 +1,24 @@
-<h1>Products</h1>
+<h1><%= pluralize(@products.size, 'Product') %></h1>
 
-<ul>
 <% @products.each do |product| %>
-  <li>
-    <strong><%= product.name %></strong> (<%= product.description %>):
-    <%= number_to_currency(product.price) %>
-  </li>
+  <article>
+    <header>
+      <h2><%= link_to(product.name, product_path(product)) %></h2>
+    </header>
+    <p>
+      <%= truncate(product.description, length: 200, separator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <th>Releasing On:</th>
+        <td><%= product.releasing_on %></td>
+      </tr>
+      <tr>
+        <th>Price:</th>
+        <td><%= number_to_currency(product.price) %></td>
+      </tr>
+    </table>
+  </article>
 <% end %>
-</ul>
+
+

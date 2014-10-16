@@ -1,0 +1,19 @@
+<article>
+  <header>
+    <h1><%= @product.name %></h1>
+  </header>
+  <h2>Description</h2>
+  <p>
+    <%= @product.description %>
+  </p>
+  <h3>Releasing On</h3>
+  <p>
+    <%= @product.releasing_on %>
+  </p>
+  <h3>Price</h3>
+  <p>
+    <%= number_to_currency(@product.price) %>
+  </p>
+</article>
+
+<%= link_to "All Products", products_path %>
