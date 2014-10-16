@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+<title>Kijovo | The Future At Your Fingertips</title>
+
 <head>
   <title>Kijovo</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,7 +11,16 @@
 </head>
 <body>
 
+<%= render "layouts/header" %>
+
+<br>
+
+<%= render "layouts/sidebar" %>
+
 <%= yield %>
 
+<%= render "layouts/footer" %>
+
 </body>
+
 </html>

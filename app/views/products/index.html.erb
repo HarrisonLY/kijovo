@@ -1,5 +1,8 @@
 <h1><%= pluralize(@products.size, 'Product') %></h1>
 
+<br>
+<br>
+
 <% @products.each do |product| %>
   <article>
     <header>
@@ -25,6 +28,3 @@
     </table>
   </article>
 <% end %>
-
-<br>
-<%= link_to("Add New Product", new_product_path) %>
