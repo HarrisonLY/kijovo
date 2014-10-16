@@ -4,7 +4,7 @@
 <br>
 
 <% @products.each do |product| %>
-  <article>
+  <article class='product'>
     <header>
       <%= image_for(product) %>
       <h2><%= link_to(product.name, product_path(product)) %></h2>
@@ -24,6 +24,10 @@
       <tr>
         <th>Website:</th>
         <td><%= product.website %></td>
+      </tr>
+      <tr>
+        <th>Industry:</th>
+        <td><%= product.industry %></td>
       </tr>
     </table>
   </article>

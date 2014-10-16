@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141016151307) do
     t.date     "releasing_on"
     t.string   "website"
     t.string   "image_file_name"
+    t.string   "industry"
   end
 
 end
