@@ -14,8 +14,12 @@ end
 
 def update
   @product = Product.find(params[:id])
-  @product.update(product_params)
+  if @product.update(product_params)
+  flash[:notice] = "Successfully Updated! :)"
   redirect_to @product
+  else
+  render :edit
+  end 
 end
 
 def new
