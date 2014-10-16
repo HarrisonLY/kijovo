@@ -14,6 +14,13 @@
   <p>
     <%= number_to_currency(@product.price) %>
   </p>
+  <h3>Website</h3>
+<p>
+  <%= @product.website %>
+</p>
+
+<h3>Image</h3>
+<%= image_for(@product) %>
 </article>
 
 <%= link_to "All Products", products_path %>

@@ -3,6 +3,7 @@
 <% @products.each do |product| %>
   <article>
     <header>
+      <%= image_for(product) %>
       <h2><%= link_to(product.name, product_path(product)) %></h2>
     </header>
     <p>
@@ -16,6 +17,10 @@
       <tr>
         <th>Price:</th>
         <td><%= number_to_currency(product.price) %></td>
+      </tr>
+      <tr>
+        <th>Website:</th>
+        <td><%= product.website %></td>
       </tr>
     </table>
   </article>

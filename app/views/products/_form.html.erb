@@ -16,6 +16,14 @@
 	<%= f.date_field :releasing_on %>
   </p>
   <p>
+  <%= f.label :website %><br/>
+  <%= f.text_field :website %>
+  </p>
+  <p>
+  <%= f.label :image_file_name %><br/>
+  <%= f.text_field :image_file_name, size:40 %>
+  </p>
+    <p>
     <%= f.submit %>
     <%= link_to "Cancel", products_path %>
   </p>
