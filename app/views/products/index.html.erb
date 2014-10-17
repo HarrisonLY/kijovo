@@ -1,12 +1,22 @@
+
+<nav>
+<ul class="nav nav-pills">
+  <li class="active"> <%= link_to 'Trending', products_path %> </li>
+  <li> <%= link_to 'Just Released', products_path %> </li>
+  <li> <%= link_to 'Releasing Soon', products_path %> </li>
+  <li> <%= link_to 'TBD', products_path %> </li>
+</ul>
+<nav>
+
+
+<br>
+
 <% @products.each do |product| %>
   <article class='product'>
     <header>
-      <%= image_for(product) %>
+      <%= image_for(product) %> 
       <h2><%= link_to(product.name, product_path(product)) %></h2>
     </header>
-    <p>
-      <%= truncate(product.description, length: 200, separator: ' ') %>
-    </p>
     <table>
       <tr>
         <th>Releasing On:</th>
