@@ -1,5 +1,5 @@
 Kijovo::Application.routes.draw do
-    root "products#index"
+    root "welcome#index"
     resources :products
 end
 
