@@ -1,36 +1,40 @@
 <%= form_for(@product) do |f| %>
   <%= render "shared/errors" %>
 
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description, cols: 40, rows: 8 %>
-  </p>
-  <p>
-    <%= f.label :price %><br/>
-    <%= f.number_field :price %>
-  </p>
-  <p>
-    <%= f.label :releasing_on %><br/>
-	<%= f.date_field :releasing_on %>
-  </p>
-  <p>
-  <%= f.label :website %><br/>
-  <%= f.text_field :website %>
-  </p>
-  <p>
-  <%= f.label :industry %><br/>
-  <%= f.text_field :industry %>
-  </p>
-  <p>
-  <%= f.label :image_file_name %><br/>
-  <%= f.text_field :image_file_name, size:40 %>
-  </p>
+  <fieldset>
+    <ol>
+      <li class="required">
+          <%= f.label :name %><br/>
+          <%= f.text_field :name %>
+      </li>
+      <li class="required">
+          <%= f.label :industry %><br/>
+          <%= f.select :industry, Product::INDUSTRY, prompt: "Pick one" %>
+      </li>
+      <li class=>
+          <%= f.label :releasing_on %><br/>
+          <%= f.date_field :releasing_on %>
+      </li>
+      <li class="required">
+        <%= f.label :price %><br/>
+        <%= f.number_field :price %>
+      </li>
+      <li class>
+          <%= f.label :description %><br/>
+          <%= f.text_area :description, cols: 40, rows: 8 %>
+      </li>
+      <li class=>
+          <%= f.label :website %><br/>
+          <%= f.text_field :website %>
+      </li>
+      <li class=>
+          <%= f.label :image_file_name %><br/>
+          <%= f.text_field :image_file_name, size:40 %>
+      </li>
+    </ol>
     <p>
-    <%= f.submit %>
-    <%= link_to "Cancel", admin_index_path %>
-  </p>
-  <% end %>
+      <%= f.submit %>
+      <%= link_to "Cancel", admin_index_path %>
+    </p>
+  </fieldset>
+<% end %>

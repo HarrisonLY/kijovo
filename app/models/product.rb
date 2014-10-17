@@ -9,6 +9,12 @@ class Product < ActiveRecord::Base
  	 message: "must reference a GIF, JPG, or PNG image"
 	}
 
+  
+  INDUSTRY = %w(Cars Sneakers Test)
+
+  validates :industry, inclusion: { in: INDUSTRY }
+
+
 	# def TBD?
 	#	price.blank? || price = TBD
 	# end
