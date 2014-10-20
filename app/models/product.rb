@@ -15,9 +15,9 @@ class Product < ActiveRecord::Base
   validates :industry, inclusion: { in: INDUSTRY }
 
 
-	# def TBD?
-	#	price.blank? || price = TBD
-	# end
+	def tbd?
+		price.blank? || price.zero? 
+	end
 
 	def self.upcoming
 		where("releasing_on >= ?", Time.now).order("releasing_on").order("name")

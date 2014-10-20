@@ -1,12 +1,11 @@
 module ProductsHelper
-#	def format_price(product)
-#	if product.TBD?
-#	   content_tag('TBD')
-#	else
-#		number_to_currency(product.price)
-#	end
- # end
-end
+def format_price(product)
+	if product.tbd?
+	"TBD"
+	else
+		number_to_currency(product.price)
+	end
+  end
 
 def image_for(product)
   if product.image_file_name.blank?
@@ -14,4 +13,6 @@ def image_for(product)
   else
     image_tag(product.image_file_name)
   end
+end
+
 end
